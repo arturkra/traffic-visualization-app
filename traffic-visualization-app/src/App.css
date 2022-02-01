@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  color: rgb(85, 85, 85);
+}
+
+
+.leaflet-container{
+  width: 100%;
+  height: 100vh;
+}
