@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Map from './Components/Map';
 import {VechicleArrayContextProvider } from './Components/Context/VechicleArrayContext';
-import OptionsBar from './Components/optionsBar';
+import OptionsBar from './Components/OptionsBar';
 import { DisplayedVechiclesContextProvider } from './Components/Context/DisplayedVechiclesContext';
 
 

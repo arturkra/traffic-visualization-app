@@ -10,7 +10,7 @@ function OptionsBar() {
     const [vechicleArrayContext,setVechicleArrayContext] = useContext(VechicleArrayContext);
     const [displayedVechiclesContext,setDisplayedVechiclesContext] = useContext(DisplayedVechiclesContext);
 
-    const [minBatteryPercentage, setMinBatteryPrecentage] = useState();
+    const [minBatteryPercentage, setMinBatteryPrecentage] = useState(1);
     const [isAvailiable, setIsAvailable] = useState(true);
 
     const minBatPerChangeHandler = (e) => {
@@ -19,7 +19,6 @@ function OptionsBar() {
 
     const isAvailableChangeHandler = (e) => {
         setIsAvailable(!isAvailiable);
-        
     }
 
     function optionsSubmitHandler(e) {
@@ -29,7 +28,6 @@ function OptionsBar() {
         let filteredArrayOfVechicles = [];
 
         vechicleArrayContext.forEach(vechicle => {
-          
             if(isAvailiable){
                 if(vechicle.batteryLevelPct >= minBatteryPercentage && vechicle.status == 'AVAILABLE'){
                     filteredArrayOfVechicles.push(vechicle);
@@ -40,9 +38,7 @@ function OptionsBar() {
             }
             
         });
-
         setDisplayedVechiclesContext(filteredArrayOfVechicles);
-        
     }
 
     return(
@@ -51,10 +47,10 @@ function OptionsBar() {
                 <h2 className="form-header">Filter the results</h2>
                 <div className="is-available">
                     <label>Show only avaliable cars</label><br/>
-                    <input type='checkbox' onChange={isAvailableChangeHandler}></input>
+                    <input className="form-checkbox" type='checkbox' onChange={isAvailableChangeHandler}></input>    
                 </div>
                 <div className="min-battery-percentage">
-                    <label>Minimum battery percantege</label><br/>
+                    <label>Minimum battery percantege:</label><br/>
                     <input type='number' min='1' max='100' onChange={minBatPerChangeHandler}></input>
                 </div>
                 <button className="submit-button" type="submit">Apply Filters</button>
