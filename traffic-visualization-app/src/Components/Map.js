@@ -26,7 +26,8 @@ function Map() {
     const [displayedVechiclesContext, setDisplayedVechiclesContext] = useContext(DisplayedVechiclesContext);
 
     async function fetchVechiclesFromApi() {
-        const responsePromise = await fetch('https://dev.vozilla.pl/api-client-portal/map?objectType=VEHICLE');
+        //Removed link to test environment from fetch command
+        const responsePromise = await fetch('LINK TO TEST ENV HERE');
         const responseData = await responsePromise.json();
     
         const fetchedVechiclesArray = responseData.objects;
