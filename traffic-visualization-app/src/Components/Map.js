@@ -27,7 +27,7 @@ function Map() {
 
     async function fetchVechiclesFromApi() {
         //Removed link to test environment from fetch command
-        const responsePromise = await fetch('LINK TO TEST ENV HERE');
+        const responsePromise = await fetch('LINK TO TEST ENV');
         const responseData = await responsePromise.json();
     
         const fetchedVechiclesArray = responseData.objects;
